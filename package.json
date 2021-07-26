@@ -1,0 +1,26 @@
+{
+  "name": "@munkacsimark/flags",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/munkacsimark/flags.git"
+  },
+  "keywords": [
+    "flagpack",
+    "flags",
+    "countryflags",
+    "flagdata",
+    "iso-3166"
+  ],
+  "author": "Mark Munkacsi <markmunkacsi@protonmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/munkacsimark/flags/issues"
+  },
+  "homepage": "https://github.com/munkacsimark/flags#readme"
+}

@@ -1,14 +1,21 @@
 import * as React from 'react'
 import countryData from './countryData'
+interface Props {
+	testProp: boolean
+}
 
-const Flag = () => {
+const Flag = ({ testProp }: Props) => {
 	return (
-		<ul>
-			{countryData.map((c) => (
-				<li>{c.emoji}</li>
-			))}
-		</ul>
+		<>
+			<h1>{testProp}</h1>
+			<ul data-testid='testid'>
+				{countryData.map((c) => (
+					<li key={c.alpha2}>{c.emoji}</li>
+				))}
+			</ul>
+		</>
 	)
 }
 
 export default Flag
+export { Props }

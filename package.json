@@ -7,6 +7,7 @@
   "exports": "./dist/Flag.modern.js",
   "main": "./dist/Flag.cjs",
   "module": "./dist/Flag.module.js",
+  "types": "./dist/Flag.d.ts",
   "scripts": {
     "build": "microbundle --jsx React.createElement",
     "develop": "microbundle watch --jsx React.createElement",
@@ -43,8 +44,6 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
     "@types/jest": "^26.0.24",
-    "@types/testing-library__jest-dom": "^5.14.1",
-    "@types/testing-library__react": "^10.2.0",
     "jest": "^27.0.6",
     "ts-jest": "^27.0.4"
   }

@@ -1,20 +1,32 @@
 import * as React from 'react'
+import {
+	Alpha2CountryCode,
+	Alpha3CountryCode,
+	CountryFlagEmoji,
+	CountryTLD,
+	NumericCountryCode,
+} from './Country'
 import countryData from './countryData'
-interface Props {
-	testProp: boolean
+interface Props extends React.HTMLAttributes<HTMLElement> {
+	alpha2?: Alpha2CountryCode
+	alpha3?: Alpha3CountryCode
+	numeric?: NumericCountryCode
+	tld?: CountryTLD
 }
 
-const Flag = ({ testProp }: Props) => {
+const atLeastOnePropDefined = (props: Props) => {
+	const { alpha2, alpha3, numeric, tld } = props
 	return (
-		<>
-			<h1>{testProp}</h1>
-			<ul data-testid='testid'>
-				{countryData.map((c) => (
-					<li key={c.alpha2}>{c.emoji}</li>
-				))}
-			</ul>
-		</>
+		alpha2 !== undefined ||
+		alpha3 !== undefined ||
+		numeric !== undefined ||
+		tld !== undefined
 	)
+}
+
+const Flag: React.FunctionComponent<Props> = (props) => {
+	const flag = <span {...props}></span>
+	return atLeastOnePropDefined(props) ? flag : null
 }
 
 export default Flag

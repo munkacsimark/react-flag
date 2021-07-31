@@ -3,39 +3,29 @@ import Emoji from 'a11y-react-emoji'
 import Country, {
 	Alpha2CountryCode,
 	Alpha3CountryCode,
-	CountryFlagEmoji,
 	CountryTLD,
 	NumericCountryCode,
 } from './Country'
 import countryData from './countryData'
 import flags from './flags'
 
+const FLAG_RATIO = 1.5
 interface Props extends React.HTMLAttributes<HTMLElement> {
 	alpha2?: Alpha2CountryCode
 	alpha3?: Alpha3CountryCode
 	numeric?: NumericCountryCode
 	tld?: CountryTLD
+	size?: 'xs' | 'sm' | 'lg' | 'xl'
 	useEmoji?: boolean
 	disableLabel?: boolean
 }
-
-const atLeastOnePropDefined = ({
-	alpha2,
-	alpha3,
-	numeric,
-	tld,
-}: Props): boolean =>
-	alpha2 !== undefined ||
-	alpha3 !== undefined ||
-	numeric !== undefined ||
-	tld !== undefined
 
 const getCountryDataByProps = ({
 	alpha2,
 	alpha3,
 	numeric,
 	tld,
-}: Props): Country => {
+}: Props): Country | null => {
 	if (!!alpha2) {
 		const data = countryData.find((data) => data.alpha2 === alpha2)
 		if (!data) throw Error(`Invalid aplha-2 code: "${alpha2}"`)
@@ -56,24 +46,62 @@ const getCountryDataByProps = ({
 		if (!data) throw Error(`Invalid tld: "${tld}"`)
 		return data
 	}
-	throw Error("County don't exists with given props.")
+	return null
+}
+
+const sizeMap = {
+	xs: 18,
+	sm: 24,
+	lg: 36,
+	xl: 48,
 }
 
 const Flag: React.FunctionComponent<Props> = (props) => {
-	const { alpha2, alpha3, numeric, tld, useEmoji, disableLabel } = props
-	const countryData = getCountryDataByProps({ alpha2, alpha3, numeric, tld })
+	const {
+		alpha2,
+		alpha3,
+		numeric,
+		tld,
+		size = 'sm',
+		useEmoji = false,
+		disableLabel = false,
+		...rest
+	} = props
+	const countryData = getCountryDataByProps({
+		alpha2,
+		alpha3,
+		numeric,
+		tld,
+	})
+	if (!countryData) throw Error("Country doesn't exist with given props.")
 
-	const flag = useEmoji ? (
+	return useEmoji ? (
 		<Emoji
 			symbol={countryData.emoji}
 			label={disableLabel ? undefined : `Flag of ${countryData.name}`}
+			{...rest}
 		/>
 	) : (
-		<span>
-			<img src={flags[`flag${alpha2}`]} alt={`Flag of ${countryData.name}`} />
+		<span
+			style={{
+				display: 'inline-block',
+				overflow: 'hidden',
+				height: `${sizeMap[size] / FLAG_RATIO}px`,
+				width: `${sizeMap[size]}px`,
+			}}
+			{...rest}>
+			<img
+				style={{
+					objectFit: 'cover',
+					display: 'block',
+					maxWidth: '100%',
+					maxHeight: '100%',
+				}}
+				src={flags[`flag${countryData.alpha2}`]}
+				alt={`Flag of ${countryData.name}`}
+			/>
 		</span>
 	)
-	return atLeastOnePropDefined(props) ? flag : null
 }
 
 export default Flag

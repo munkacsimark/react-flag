@@ -10,6 +10,6 @@
 		"jsx": "react",
 		"esModuleInterop": true
 	},
-	"include": ["./src/**/*.tsx", "./src/**/*.ts"],
+	"include": ["./src/**/*.tsx", "./src/**/*.ts", "./svg-module.d.ts"],
 	"exclude": ["node_modules"]
 }

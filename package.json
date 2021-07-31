@@ -1,6 +1,6 @@
 {
   "name": "@munkacsimark/flags",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "",
   "type": "module",
   "source": "./src/Flag.tsx",
@@ -10,9 +10,8 @@
   "types": "./dist/Flag.d.ts",
   "scripts": {
     "build": "microbundle --jsx React.createElement",
-    "develop": "microbundle watch --jsx React.createElement",
-    "format": "prettier --write \"./{src|tests}/*\"",
-    "test": "jest"
+    "test": "jest",
+    "format": "prettier --write \"./{src|tests}/*\""
   },
   "repository": {
     "type": "git",
@@ -38,6 +37,7 @@
     "@types/react": "^17.0.15",
     "@types/react-dom": "^17.0.9",
     "jest": "^27.0.6",
+    "jest-transform-stub": "^2.0.0",
     "microbundle": "^0.13.3",
     "prettier": "^2.3.2",
     "react": "^17.0.2",

@@ -5,13 +5,13 @@ This package is based on [ISO-3166 country codes](https://en.wikipedia.org/wiki/
 ## Installation
 
 ```bash
-npm install @munkacsimark/react-flags --save
+npm install @munkacsimark/react-flag --save
 ```
 
 ## Usage
 
 ```javascript
-import Flag from '@munkacsimark/flags'
+import Flag from '@munkacsimark/react-flag'
 ```
 
 ## Properties

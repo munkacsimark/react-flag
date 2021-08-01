@@ -16,17 +16,17 @@ import Flag from '@munkacsimark/flags'
 
 ## Properties
 
-| Key          | Value   | Required | Default | Format                                                                           |
-| ------------ | ------- | -------- | ------- | -------------------------------------------------------------------------------- |
-| alpha2       | String  | false\*  | -       | [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)           |
-| alpha3       | String  | false\*  | -       | [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3)           |
-| numeric      | String  | false\*  | -       | [ISO 3166-1 numeric](https://en.wikipedia.org/wiki/ISO_3166-1_numeric)           |
-| tld          | String  | false\*  | -       | [Country code TLD](https://en.wikipedia.org/wiki/Country_code_top-level_domain)- |
-| size         | String  | false    | 'sm'    | 'xs', 'sm', 'lg', 'xl'                                                           |
-| useEmoji     | Boolean | false    | false   | -                                                                                |
-| disableLabel | Boolean | false    | false   |                                                                                  |
+| Key          | Value   | Required | Default | Format                                                                          |
+| ------------ | ------- | -------- | ------- | ------------------------------------------------------------------------------- |
+| alpha2       | String  | false\*  | -       | [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)          |
+| alpha3       | String  | false\*  | -       | [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3)          |
+| numeric      | String  | false\*  | -       | [ISO 3166-1 numeric](https://en.wikipedia.org/wiki/ISO_3166-1_numeric)          |
+| tld          | String  | false\*  | -       | [Country code TLD](https://en.wikipedia.org/wiki/Country_code_top-level_domain) |
+| size         | String  | false    | 'sm'    | 'xs', 'sm', 'lg', 'xl'                                                          |
+| useEmoji     | Boolean | false    | false   | -                                                                               |
+| disableLabel | Boolean | false    | false   | -                                                                               |
 
-\* For identifying the country **\*one of the following properties needs to be defined**: **alpha2**, **alpha3**, **numeric**, **tld**. The order of property precedence is the same.
+\* For identifying the country **one of the following properties needs to be defined**: **alpha2**, **alpha3**, **numeric**, **tld**. The order of property precedence is the same.
 
 **alpha2** and **alpha3** should be upper-case letters (e.g. `'US'`), **numeric code**s as string (e.g `'840'`) and **tld**s starting with a period (e.g. `'.us'`).
 

@@ -77,25 +77,26 @@ const Flag: React.FunctionComponent<Props> = (props) => {
 
 	return useEmoji ? (
 		<Emoji
+			{...rest}
 			symbol={countryData.emoji}
 			label={disableLabel ? undefined : `Flag of ${countryData.name}`}
-			{...rest}
 		/>
 	) : (
 		<span
+			{...rest}
 			style={{
 				display: 'inline-block',
 				overflow: 'hidden',
 				height: `${sizeMap[size] / FLAG_RATIO}px`,
 				width: `${sizeMap[size]}px`,
-			}}
-			{...rest}>
+				...rest.style,
+			}}>
 			<img
 				style={{
-					objectFit: 'cover',
+					objectFit: 'contain',
 					display: 'block',
-					maxWidth: '100%',
-					maxHeight: '100%',
+					width: '100%',
+					height: '100%',
 				}}
 				src={flags[`flag${countryData.alpha2}`]}
 				alt={`Flag of ${countryData.name}`}

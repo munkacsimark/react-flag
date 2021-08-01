@@ -57,33 +57,33 @@ describe('<Flag />', () => {
 	})
 
 	test('it renders correct size without size prop', () => {
-		render(<Flag alpha2='US' />)
-		expect(screen.getByRole('img')).toHaveAttribute('width', '24px')
-		expect(screen.getByRole('img')).toHaveAttribute('height', '16px')
+		const { container } = render(<Flag alpha2='US' />)
+		expect(container.firstChild).toHaveStyle('width: 24px')
+		expect(container.firstChild).toHaveStyle('height: 16px')
 	})
 
 	test('it renders correct size with "xs" size prop', () => {
-		render(<Flag alpha2='US' size='xs' />)
-		expect(screen.getByRole('img')).toHaveAttribute('width', '18px')
-		expect(screen.getByRole('img')).toHaveAttribute('height', '12px')
+		const { container } = render(<Flag alpha2='US' size='xs' />)
+		expect(container.firstChild).toHaveStyle('width: 18px')
+		expect(container.firstChild).toHaveStyle('height: 12px')
 	})
 
 	test('it renders correct size with "sm" size prop', () => {
-		render(<Flag alpha2='US' size='sm' />)
-		expect(screen.getByRole('img')).toHaveAttribute('width', '24px')
-		expect(screen.getByRole('img')).toHaveAttribute('height', '16px')
+		const { container } = render(<Flag alpha2='US' size='sm' />)
+		expect(container.firstChild).toHaveStyle('width: 24px')
+		expect(container.firstChild).toHaveStyle('height: 16px')
 	})
 
 	test('it renders correct size with "lg" size prop', () => {
-		render(<Flag alpha2='US' size='lg' />)
-		expect(screen.getByRole('img')).toHaveAttribute('width', '36px')
-		expect(screen.getByRole('img')).toHaveAttribute('height', '24px')
+		const { container } = render(<Flag alpha2='US' size='lg' />)
+		expect(container.firstChild).toHaveStyle('width: 36px')
+		expect(container.firstChild).toHaveStyle('height: 24px')
 	})
 
 	test('it renders correct size with "xl" size prop', () => {
-		render(<Flag alpha2='US' size='xl' />)
-		expect(screen.getByRole('img')).toHaveAttribute('width', '48px')
-		expect(screen.getByRole('img')).toHaveAttribute('height', '32px')
+		const { container } = render(<Flag alpha2='US' size='xl' />)
+		expect(container.firstChild).toHaveStyle('width: 48px')
+		expect(container.firstChild).toHaveStyle('height: 32px')
 	})
 
 	test('it renders emoji correctly with useEmoji prop', () => {

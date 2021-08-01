@@ -1,7 +1,7 @@
 {
-  "name": "@munkacsimark/flags",
+  "name": "@munkacsimark/react-flag",
   "version": "0.1.0",
-  "description": "",
+  "description": "Simple flag component for React which uses svg or emojis, based on ISO-3166.",
   "type": "module",
   "source": "./src/Flag.tsx",
   "exports": "./dist/Flag.modern.js",
@@ -15,21 +15,23 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/munkacsimark/flags.git"
+    "url": "git+https://github.com/munkacsimark/react-flag.git"
   },
   "keywords": [
     "flagpack",
-    "flags",
+    "flag",
     "countryflags",
     "flagdata",
-    "iso-3166"
+    "iso-3166",
+    "react-flag",
+    "flagemoji"
   ],
   "author": "Mark Munkacsi <markmunkacsi@protonmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/munkacsimark/flags/issues"
+    "url": "https://github.com/munkacsimark/react-flag/issues"
   },
-  "homepage": "https://github.com/munkacsimark/flags#readme",
+  "homepage": "https://github.com/munkacsimark/react-flag#readme",
   "devDependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",

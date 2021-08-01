@@ -19,7 +19,7 @@ import Flag from '@munkacsimark/react-flag'
 | Key          | Value   | Required | Default | Format                                                                          |
 | ------------ | ------- | -------- | ------- | ------------------------------------------------------------------------------- |
 | alpha2       | String  | false\*  | -       | [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)          |
-| alpha3       | String  | false\*  | -       | [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3)          |
+| alpha3       | String  | false\*  | -       | [ISO 3166-1 alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3)          |
 | numeric      | String  | false\*  | -       | [ISO 3166-1 numeric](https://en.wikipedia.org/wiki/ISO_3166-1_numeric)          |
 | tld          | String  | false\*  | -       | [Country code TLD](https://en.wikipedia.org/wiki/Country_code_top-level_domain) |
 | size         | String  | false    | 'sm'    | 'xs', 'sm', 'lg', 'xl'                                                          |
